@@ -23,7 +23,7 @@ const Nasa = (props) => {
   return (
     <div>
       <form id="nasa">
-        <h1>Hello from Nasa</h1>
+        <h1>Hello from NASA</h1>
         <img id="nasaImg" src={picture} width={300} height={300} />
       </form>
     </div>
