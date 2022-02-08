@@ -6,14 +6,16 @@ const key = 'NBPgGHYWCXQ2SmBwuPu60TIwceuXMODW';
 
 const TicketMaster = (props) => {
   const [name, setName] = useState('');
+  const [date, setDate] = useState('');
 
   async function handleFetch() {
     let url = `${baseURL}&apikey=${key}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data._embedded.events[0].name);
+      console.log(data._embedded.events[0].dates.start.localDate);
       setName(data._embedded.events[0].name);
+      setDate(data._embedded.events[0].dates.start.localDate);
     } catch (err) {
       console.error(err);
     }
