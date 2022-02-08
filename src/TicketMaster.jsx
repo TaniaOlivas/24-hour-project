@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Moment from 'moment';
 
 const baseURL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 const key = 'NBPgGHYWCXQ2SmBwuPu60TIwceuXMODW';
 
 const TicketMaster = (props) => {
-  const formatDate = Moment().format('MM-DD-YYYY');
 
   const [events, setEvents] = useState([]);
 
@@ -31,10 +29,10 @@ const TicketMaster = (props) => {
   const eventMapper = () => {
     return events.map((event, index) => {
       return (
-        <tr key={index}>
-          <th scope="row">{event.name}</th>
-          <th scope="row">{event.dates.start.localDate}</th>
-          <th scope="row">{event.dates.start.localTime}</th>
+        <tr id='table' key={index}>
+          <th className='row' scope="row">{event.name}</th>
+          <th className='row' scope="row">{event.dates.start.localDate}</th>
+          <th className='row' scope="row">{event.dates.start.localTime}</th>
         </tr>
       );
     });
@@ -44,10 +42,10 @@ const TicketMaster = (props) => {
     <div>
       <table>
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Time</th>
+          <tr id='eventHeaders'>
+            <th><h2>Name</h2></th>
+            <th><h2>Date</h2></th>
+            <th><h2>Time</h2></th>
           </tr>
         </thead>
         <tbody>{eventMapper()}</tbody>

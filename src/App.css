@@ -17,21 +17,54 @@ button {
 button:hover {
     transform: scale(1.1);
     background-color: rgb(184, 214, 224);
-  }
+}
 
 form {
     border-radius: 6px;
     background-color: aliceblue;
-    height: 30vh;
-    width: 20vw;
     opacity: .8;
-    margin-top: 2%;
-    margin-left: 13%;
     position: absolute;
+    margin-left: 20%;
 }
 
-img {
+#weather {
+    height: 30vh;
+    width: 20vw;
+    margin-top: 0;
+}
+
+#nasa {
+    height: 40vh;
+    width: 20vw;
+    opacity: .8;
+    margin-top: 18%;
+}
+
+#weatherIcon {
     height: 75px;
     width: 75px;
     margin: -15px;
+    border-radius: 20%;
+}
+
+#nasaImg {
+    border-radius: 20%;
+    height: 200px;
+    width: 200px;
+}
+
+table {
+    background-color: aliceblue;
+    text-align: left;
+    border-radius: 6px;
+    opacity: .8;
+    margin-left: 45%;
+}
+
+#eventHeaders {
+    text-align: center;
+}
+
+.row {
+    padding-left: 20px;
 }
