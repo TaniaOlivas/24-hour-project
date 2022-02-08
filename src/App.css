@@ -6,6 +6,7 @@ body {
 
 #header {
     font-size: xx-large;
+    background-color: rgb(213, 222, 230);
 }
 
 button {
@@ -24,7 +25,7 @@ form {
     background-color: aliceblue;
     opacity: .8;
     position: absolute;
-    margin-left: 20%;
+    margin-left: 15%;
 }
 
 #weather {
@@ -34,7 +35,7 @@ form {
 }
 
 #nasa {
-    height: 40vh;
+    height: 37vh;
     width: 20vw;
     opacity: .8;
     margin-top: 18%;
@@ -58,7 +59,7 @@ table {
     text-align: left;
     border-radius: 6px;
     opacity: .8;
-    margin-left: 45%;
+    margin-left: 40%;
 }
 
 #eventHeaders {
