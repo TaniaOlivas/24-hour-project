@@ -1,0 +1,72 @@
+body {
+    background-image: url('./assets/backgroundPic.jpg');
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+#header {
+    font-size: xx-large;
+    background-color: rgb(213, 222, 230);
+}
+
+button {
+    border-radius: 4px;
+    background-color: rgb(204, 236, 248);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: rgb(184, 214, 224);
+}
+
+form {
+    border-top: 0;
+    border-radius: 6px;
+    background-color: aliceblue;
+    opacity: .8;
+    position: absolute;
+    margin-left: 20%;
+}
+
+#weather {
+    height: 30vh;
+    width: 20vw;
+    margin-top: 0;
+}
+
+#nasa {
+    height: 36vh;
+    width: 20vw;
+    opacity: .9;
+    margin-top: 19%;
+}
+
+#weatherIcon {
+    height: 75px;
+    width: 75px;
+    margin: -15px;
+    border-radius: 20%;
+}
+
+#nasaImg {
+    border-radius: 20%;
+    height: 200px;
+    width: 200px;
+}
+
+table {
+    background-color: aliceblue;
+    text-align: left;
+    border-radius: 6px;
+    opacity: .8;
+    margin-left: 45%;
+}
+
+#eventHeaders {
+    text-align: center;
+}
+
+.row {
+    padding-left: 20px;
+}
