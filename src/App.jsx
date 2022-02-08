@@ -1,9 +1,10 @@
 import React from 'react';
+import TicketMaster from './TicketMaster';
 
 function App() {
   return (
     <div>
-      <h1>Develop Branch</h1>
+      <TicketMaster />
     </div>
   );
 }
