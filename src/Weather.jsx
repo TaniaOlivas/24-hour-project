@@ -8,6 +8,7 @@ const Weather = (props) => {
     const [temp, setTemp] = useState('Loading...');
     let celsius = Math.floor (temp - 273);
     let fahrenheit = Math.floor (celsius * (9/5) + 32);
+    const [isFahrVisible, setisFahrVisible] = useState(true);
 
 
 async function handleFetch() {
@@ -22,6 +23,10 @@ async function handleFetch() {
         console.error(err);
     }}
 
+function handleToggle() {
+    setisFahrVisible(!isFahrVisible)
+}
+
 useEffect(() => {
         handleFetch();
     }, []);
@@ -29,9 +34,9 @@ useEffect(() => {
     return ( 
     <div>
         <h1>Indianapolis</h1>
-        <p>Temperature: {fahrenheit}ºF</p>
-        <p>Temperature: {celsius}ºC</p>
-            <button>Change Unit</button>
+        {isFahrVisible === true ? <p>Temperature: {fahrenheit}ºF</p> : <p>Temperature: {celsius}ºC</p>}
+            <button id='tempType' onClick={(handleToggle)}>Change Unit</button>
+
     </div> 
     );
     }
