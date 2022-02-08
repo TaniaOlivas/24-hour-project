@@ -25,6 +25,24 @@ const TicketMaster = (props) => {
   return (
     <div>
       <h1>Hello from TicketMaster</h1>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Event: </th>
+            <td>{name}</td>
+            <td>{date}</td>
+            <td>{time}</td>
+          </tr>
+        </tbody>
+      </table>
       <button onClick={handleFetch}>Click here for Event!</button>
     </div>
   );
