@@ -20,7 +20,7 @@ const Nasa = (props) => {
 
      return ( <div>
          <form id='nasa'>
-         <h2>Hello from Nasa</h2>
+         <h2>Hello from NASA</h2>
          <img id='nasaImg' src={picture} width={300} height={300}  />
          {/* <button onClick={handleFetch}>Click for picture</button> */}
          </form>
