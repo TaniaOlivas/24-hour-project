@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TicketMaster from './TicketMaster';
-import Nasa from "./Nasa";
+import Nasa from './Nasa';
 import Weather from './Weather';
 import './App.css';
 
@@ -33,11 +33,11 @@ function App() {
 
   return (
     <div>
-      <nav id='header'>
+      <nav id="header">
         <h1>What's Going on in Your Area</h1>
       </nav>
-      <Weather lat={lat} lng={lng}/>
-     <Nasa />
+      <Weather lat={lat} lng={lng} />
+      <Nasa lat={lat} lng={lng} />
       <TicketMaster lat={lat} lng={lng} />
     </div>
   );

@@ -37,7 +37,7 @@ useEffect(() => {
     return ( 
     <div>
         <form id='weather'>
-            <h1>Indianapolis</h1>
+            <h1>Current Weather</h1>
             <img id='weatherIcon' src="https://purepng.com/public/uploads/large/purepng.com-weather-iconsymbolsiconsapple-iosiosios-8-iconsios-8-721522596142qx4ep.png" alt="weatherIcon" />
             {isFahrVisible === true ? <p>Temperature: {fahrenheit}ºF</p> : <p>Temperature: {celsius}ºC</p>}
                 <button id='tempType' onClick={(handleToggle)}>Change Unit</button>
