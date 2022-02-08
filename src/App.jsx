@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import TicketMaster from './TicketMaster';
+import Nasa from "./Nasa";
+import Weather from './Weather';
+import './App.css';
 
 function App() {
   const [lat, setLat] = useState('');
@@ -31,6 +34,11 @@ function App() {
   return (
     <div>
       <TicketMaster lat={lat} lng={lng} />
+     <Nasa />
+      <nav id='header'>
+        <h1>What's Going on in Your Area</h1>
+      </nav>
+      <Weather/>
     </div>
   );
 }

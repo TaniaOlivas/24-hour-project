@@ -1,0 +1,37 @@
+body {
+    background-image: url('./assets/backgroundPic.jpg');
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#header {
+    font-size: xx-large;
+}
+
+button {
+    border-radius: 4px;
+    background-color: rgb(204, 236, 248);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: rgb(184, 214, 224);
+  }
+
+form {
+    border-radius: 6px;
+    background-color: aliceblue;
+    height: 30vh;
+    width: 20vw;
+    opacity: .8;
+    margin-top: 2%;
+    margin-left: 13%;
+    position: absolute;
+}
+
+img {
+    height: 75px;
+    width: 75px;
+    margin: -15px;
+}
