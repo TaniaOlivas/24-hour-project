@@ -33,12 +33,12 @@ function App() {
 
   return (
     <div>
-      <TicketMaster lat={lat} lng={lng} />
-     <Nasa />
       <nav id='header'>
         <h1>What's Going on in Your Area</h1>
       </nav>
-      <Weather/>
+      <Weather lat={lat} lng={lng}/>
+     <Nasa />
+      <TicketMaster lat={lat} lng={lng} />
     </div>
   );
 }
