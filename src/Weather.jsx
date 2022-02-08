@@ -33,10 +33,11 @@ useEffect(() => {
 
     return ( 
     <div>
-        <h1>Indianapolis</h1>
-        {isFahrVisible === true ? <p>Temperature: {fahrenheit}ºF</p> : <p>Temperature: {celsius}ºC</p>}
-            <button id='tempType' onClick={(handleToggle)}>Change Unit</button>
-
+        <form>
+            <h1>Indianapolis</h1>
+            {isFahrVisible === true ? <p>Temperature: {fahrenheit}ºF</p> : <p>Temperature: {celsius}ºC</p>}
+                <button id='tempType' onClick={(handleToggle)}>Change Unit</button>
+        </form>
     </div> 
     );
     }
