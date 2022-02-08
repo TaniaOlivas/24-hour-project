@@ -12,8 +12,8 @@ const TicketMaster = (props) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
-      setName(data);
+      console.log(data._embedded.events[0].name);
+      setName(data._embedded.events[0].name);
     } catch (err) {
       console.error(err);
     }
