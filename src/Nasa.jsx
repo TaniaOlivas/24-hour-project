@@ -25,7 +25,6 @@ const Nasa = (props) => {
       <form id="nasa">
         <h1>Hello from Nasa</h1>
         <img id="nasaImg" src={picture} width={300} height={300} />
-        {/* <button onClick={handleFetch}>Click for picture</button> */}
       </form>
     </div>
   );
