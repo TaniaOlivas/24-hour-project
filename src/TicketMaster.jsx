@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Moment from 'moment';
 
 const baseURL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 const key = 'NBPgGHYWCXQ2SmBwuPu60TIwceuXMODW';
 
 const TicketMaster = (props) => {
+  const formatDate = Moment().format('MM-DD-YYYY');
+
   const [events, setEvents] = useState([]);
 
   async function handleFetch() {
