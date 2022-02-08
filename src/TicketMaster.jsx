@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const baseURL =
-  'https://app.ticketmaster.com/discovery/v2/events.json?latlong=34.0522,-118.2437';
+const baseURL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 const key = 'NBPgGHYWCXQ2SmBwuPu60TIwceuXMODW';
 
 const TicketMaster = (props) => {
@@ -10,7 +9,8 @@ const TicketMaster = (props) => {
   const [time, setTime] = useState('');
 
   async function handleFetch() {
-    let url = `${baseURL}&apikey=${key}`;
+    let url = `${baseURL}?latlong=${props.lat},${props.lng}&apikey=${key}`;
+
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -22,9 +22,15 @@ const TicketMaster = (props) => {
       console.error(err);
     }
   }
+
+  useEffect(() => {
+    if (props.lat && props.lng) {
+      handleFetch();
+    }
+  }, [props.lat, props.lng]);
+
   return (
     <div>
-      <h1>Hello from TicketMaster</h1>
       <table>
         <thead>
           <tr>

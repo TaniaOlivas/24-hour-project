@@ -30,11 +30,7 @@ function App() {
 
   return (
     <div>
-      <TicketMaster />
-      <h1>Coordinates</h1>
-      <p>{status}</p>
-      {lat && <p>Latitude: {lat}</p>}
-      {lng && <p>Longitude: {lng}</p>}
+      <TicketMaster lat={lat} lng={lng} />
     </div>
   );
 }
