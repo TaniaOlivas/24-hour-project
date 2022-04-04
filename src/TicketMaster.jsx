@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Table } from 'reactstrap';
 
 const baseURL = 'https://app.ticketmaster.com/discovery/v2/events.json';
-const key = 'NBPgGHYWCXQ2SmBwuPu60TIwceuXMODW';
+const key = process.env.REACT_APP_TICKET_API_KEY;
 
 const TicketMaster = (props) => {
-
   const [events, setEvents] = useState([]);
 
   async function handleFetch() {
@@ -13,7 +13,6 @@ const TicketMaster = (props) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data._embedded.events);
       setEvents(data._embedded.events);
     } catch (err) {
       console.error(err);
@@ -28,11 +27,31 @@ const TicketMaster = (props) => {
 
   const eventMapper = () => {
     return events.map((event, index) => {
+      const formatDate = () => {
+        let dates = new Date(event.dates.start.dateTime);
+        return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(
+          dates
+        );
+      };
+
+      const formatTime = () => {
+        let times = new Date(event.dates.start.dateTime);
+        return new Intl.DateTimeFormat('en-US', { timeStyle: 'short' }).format(
+          times
+        );
+      };
       return (
-        <tr id='table' key={index}>
-          <th className='row' scope="row">{event.name}</th>
-          <th className='row' scope="row">{event.dates.start.localDate}</th>
-          <th className='row' scope="row">{event.dates.start.localTime}</th>
+        <tr key={index}>
+          <td className="tableRow p-0">
+            <a href={event.url}>
+              <Button className="ticketbtn" style={{ fontSize: '12px' }}>
+                Buy Tickets
+              </Button>
+            </a>
+          </td>
+          <td className="p-0">{event.name}</td>
+          <td className="p-0">{formatDate()}</td>
+          <td className="p-0">{formatTime()}</td>
         </tr>
       );
     });
@@ -40,16 +59,19 @@ const TicketMaster = (props) => {
 
   return (
     <div>
-      <table>
-        <thead>
-          <tr id='eventHeaders'>
-            <th><h2>Name</h2></th>
-            <th><h2>Date</h2></th>
-            <th><h2>Time</h2></th>
-          </tr>
-        </thead>
-        <tbody>{eventMapper()}</tbody>
-      </table>
+      <div>
+        <Table hover>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>{eventMapper()}</tbody>
+        </Table>
+      </div>
     </div>
   );
 };

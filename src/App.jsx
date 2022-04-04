@@ -3,6 +3,7 @@ import TicketMaster from './TicketMaster';
 import Nasa from './Nasa';
 import Weather from './Weather';
 import './App.css';
+import { Col, Container, Nav, Row } from 'reactstrap';
 
 function App() {
   const [lat, setLat] = useState('');
@@ -33,12 +34,26 @@ function App() {
 
   return (
     <div>
-      <nav id="header">
+      <Nav id="header" className="justify-content-center mt-3">
         <h1>What's Going on in Your Area</h1>
-      </nav>
-      <Weather lat={lat} lng={lng} />
-      <Nasa lat={lat} lng={lng} />
-      <TicketMaster lat={lat} lng={lng} />
+      </Nav>
+      <Container className="pt-3">
+        <Row className="align-items-center justify-content-center">
+          <Col lg="4">
+            <Row>
+              <Col className="p-2 mb-2" lg="12" xs="6">
+                <Weather lat={lat} lng={lng} />
+              </Col>
+              <Col className="p-2 mb-2" lg="12" xs="6">
+                <Nasa lat={lat} lng={lng} />
+              </Col>
+            </Row>
+          </Col>
+          <Col lg="8">
+            <TicketMaster lat={lat} lng={lng} />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

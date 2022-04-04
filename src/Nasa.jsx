@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Form } from 'reactstrap';
+
+const baseURL = 'https://api.nasa.gov/planetary/earth/imagery';
+const API_Key = process.env.REACT_APP_NASA_API_KEY;
+
 const Nasa = (props) => {
   const [picture, setPicture] = useState('');
 
   async function handleFetch() {
-    const url = `https://api.nasa.gov/planetary/earth/imagery?lon=${props.lng}&lat=${props.lat}&date=2014-02-01&api_key=8Mb2e39Rd5d7S01R09oPasEQgdLaopWhrKM10gu1&dim=.03`;
+    const url = `${baseURL}?lon=${props.lng}&lat=${props.lat}&api_key=${API_Key}`;
 
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, { mode: 'no-cors' });
       const data = await response.blob();
       setPicture(URL.createObjectURL(data));
     } catch (err) {
@@ -22,13 +27,12 @@ const Nasa = (props) => {
 
   return (
     <div>
-      <form id="nasa">
-        <h1>Hello from NASA</h1>
-        <img id="nasaImg" src={picture} width={300} height={300} />
-      </form>
+      <Form id="nasa" className="form p-1" style={{ height: '250px' }}>
+        <h2>Hello from NASA</h2>
+        <img id="nasaImg" src={picture} alt="Satellite View" />
+      </Form>
     </div>
   );
 };
 
 export default Nasa;
-
