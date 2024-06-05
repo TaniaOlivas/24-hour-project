@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import TicketMaster from './TicketMaster';
 import Nasa from './Nasa';
+import TicketMaster from './TicketMaster';
+import Maps from './Maps';
 import Weather from './Weather';
 import './App.css';
 import { Col, Container, Nav, Row } from 'reactstrap';
@@ -43,6 +44,9 @@ function App() {
             <Row>
               <Col className="p-2 mb-2" lg="12" xs="6">
                 <Weather lat={lat} lng={lng} />
+              </Col>
+              <Col className="p-2 mb-2" lg="12" xs="6">
+                <Maps lat={lat} lng={lng} />
               </Col>
               <Col className="p-2 mb-2" lg="12" xs="6">
                 <Nasa lat={lat} lng={lng} />

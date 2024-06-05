@@ -33,7 +33,7 @@ body {
   border-radius: 20%;
 }
 
-#nasaImg {
+#mapImg {
   border-radius: 20%;
   width: 200px;
   height: 200px;
@@ -59,13 +59,13 @@ table {
 }
 
 @media screen and (max-width: 445px) {
-  #nasaImg {
+  #mapImg {
     width: 180px;
     height: 180px;
   }
 }
 @media screen and (max-width: 419px) {
-  #nasaImg {
+  #mapImg {
     width: 130px;
     height: 130px;
   }

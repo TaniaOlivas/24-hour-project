@@ -8,12 +8,12 @@ const Nasa = (props) => {
   const [picture, setPicture] = useState('');
 
   async function handleFetch() {
-    const url = `${baseURL}?lon=${props.lng}&lat=${props.lat}&api_key=${API_Key}`;
+    const url = `${baseURL}?lon=${props.lng}&lat=${props.lat}&date=2018-01-01&dim=0.15&api_key=${API_Key}`;
 
     try {
-      const response = await fetch(url, { mode: 'no-cors' });
-      const data = await response.blob();
-      setPicture(URL.createObjectURL(data));
+      const response = await fetch(url);
+      const data = await response;
+      setPicture(data.url);
     } catch (err) {
       console.error(err);
     }
@@ -29,7 +29,7 @@ const Nasa = (props) => {
     <div>
       <Form id="nasa" className="form p-1" style={{ height: '250px' }}>
         <h2>Hello from NASA</h2>
-        <img id="nasaImg" src={picture} alt="Satellite View" />
+        <img id="mapImg" src={picture} alt="Satellite View" />
       </Form>
     </div>
   );
