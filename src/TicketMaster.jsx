@@ -28,17 +28,15 @@ const TicketMaster = (props) => {
   const eventMapper = () => {
     return events.map((event, index) => {
       const formatDate = () => {
-        let dates = new Date(event.dates.start.dateTime);
-        return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(
-          dates
-        );
+        let dates = new Date(event.dates.start.localDate);
+        let formattedDates = dates.toLocaleDateString();
+        return formattedDates;
       };
 
       const formatTime = () => {
         let times = new Date(event.dates.start.dateTime);
-        return new Intl.DateTimeFormat('en-US', { timeStyle: 'short' }).format(
-          times
-        );
+        let formattedTime = times.toLocaleTimeString();
+        return formattedTime;
       };
       return (
         <tr key={index}>
